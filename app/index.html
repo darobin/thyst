@@ -26,12 +26,34 @@
       </nav>
     </div>
     <footer>
-      <div class='progress' value='20' max='100'><div class='advance'></div></div>
-      <div class='controls'>
-        <button id='rwd'>‹</button>
-        <button id='pause'>❙❙</button>
-        <button id='play'>▶</button>
-        <button id='fwd'>›</button>
+      <div id='play-progress' value='20' max='100'><div id='play-advance'></div></div>
+      <div id='controls'>
+        <div id='play-controls' class='playing-off'>
+          <button class='play-control' id='play-control-rwd'>‹</button>
+          <button class='play-control' id='play-control-pause'>❙❙</button>
+          <button class='play-control' id='play-control-play'>▶</button>
+          <button class='play-control' id='play-control-fwd'>›</button>
+        </div>
+        <div id='now'>
+          <img src='img/kadebostany.jpg' width='64' height='64'>
+          <div id='now-text'>
+            <div id='now-title'>Budapest</div>
+            <div id='now-author'>Poni Hoax</div>
+            <div id='now-source'>thyst is coming</div>
+          </div>
+        </div>
+        <div id='play-volume'>
+          <input type='range' min='0' max='100' value='80'>
+        </div>
+        <div id='playback'>
+          <button id='playback-random'>⤮</button>
+          <button id='playback-loop'>⟲</button>
+          <div id='playback-time'>
+            <span id='playback-time-done'>0:42</span>
+            /
+            <span id='playback-time-total'>3:19</span>
+          </div>
+        </div>
       </div>
     </footer>
   </body>

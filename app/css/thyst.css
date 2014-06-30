@@ -45,11 +45,13 @@ nav {
 footer {
     min-height: 4em;
     border-top:  0.5em solid #fff;
+    text-align: center;
+    padding-bottom: 0.5em;
 }
 
 
-/* progress */
-footer div.progress {
+/* play controls, progress, etc. */
+#play-progress {
     background: #bbec5e;
     display:    block;
     width:  100%;
@@ -57,8 +59,91 @@ footer div.progress {
     height: 5px;
     margin-bottom:  0.5em;
 }
-footer div.progress .advance {
+#play-advance {
     background: #e3433e;
     width:  20%;
     height: 5px;
+}
+
+#controls {
+    display:    flex;
+    flex-wrap:  wrap;
+    justify-content:    center;
+}
+#play-controls {
+    display:    flex;
+    justify-content:    center;
+}
+.play-control {
+    align-self: center;
+    border: 1px solid #9ed33a;
+    color:  #9ed33a;
+    border-radius:  50%;
+    text-align: center;
+    background: #fff;
+    margin: 0 0.2em;
+    font-size:  2em;
+    cursor: pointer;
+}
+.play-control:hover {
+    color:  #fff;
+    background: #9ed33a;
+    border-color:   #e3433e;
+}
+#play-control-rwd, #play-control-fwd {
+    height: 1.3em;
+    width:  1.3em;
+}
+#play-control-pause, #play-control-play {
+    height: 2em;
+    width:  2em;
+}
+#now {
+    display:    flex;
+}
+#now > * {
+    align-self: center;
+}
+#now-text {
+    font-family:    "Lato";
+    min-width:  15em;
+    text-align: left;
+    padding:    0 0.5em;
+}
+#now-author, #now-source {
+    font-size:  0.8em;
+}
+#play-volume {
+    display:    flex;
+    justify-content:    center;
+    flex-direction: column;
+}
+#playback {
+    display:    flex;
+    flex-wrap:  wrap;
+    width:  6em;
+}
+/* XXX needs a grey version for toggled off */
+#playback-random, #playback-loop {
+    width:  2em;
+    height: 2em;
+    font-size:  1.5em;
+    background: #fff;
+    border: none;
+    color:  #9ed33a;
+}
+#playback-time {
+    font-family:    "Lato";
+    font-size:  0.8em;
+    width:  7.5em;
+    margin: 0.2em 0 0 0;
+}
+
+
+/* playing controls */
+.playing-off #play-control-pause {
+    display:    none;
+}
+.playing-on #play-control-play {
+    display:    none;
 }
