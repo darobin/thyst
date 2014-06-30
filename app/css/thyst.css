@@ -39,6 +39,20 @@ h1 {
     border-left:    6px solid #e3433e;
     color:  #126f73;
 }
+#settings {
+    float:  right;
+    border: none;
+    background: none;
+    color:  #fff;
+    font-size:  2em;
+    padding:    0 1em;
+    cursor: pointer;
+    height: 100%;
+}
+#settings:hover {
+    background: #fff;
+    color:  #9ed33a;
+}
 nav {
     border-right:   1px solid #bbec5e;
 }
@@ -147,3 +161,72 @@ footer {
 .playing-on #play-control-play {
     display:    none;
 }
+
+/* nav stuff */
+nav {
+    font-family:    "Lato";
+}
+nav button {
+    font-family:    inherit;
+    font-size:  inherit;
+    background: inherit;
+    color:  inherit;
+    border: 0;
+    padding:    0;
+    text-align: left;
+    font-variant:   inherit;
+    font-weight:    inherit;
+}
+button::-moz-focus-inner {
+    border: 0;
+    padding:    0;
+}
+nav ul {
+    padding:   0 1em;
+}
+nav li {
+    display:    block;
+}
+nav li:not(.head):not(.control) button {
+    font-weight:    300;
+    padding-left:   0.5em;
+    width:  100%;
+}
+nav li:not(.head):not(.control) button:hover {
+    color:  #fff;
+    background: #9ed33a;
+}
+nav li.head {
+    font-variant: small-caps;
+    font-weight:    300;
+    color:  #126f73;
+    border-bottom:  1px solid #9ed33a;
+    margin-bottom:  0.2em;
+}
+nav li.head button {
+    cursor: pointer;
+    width:  100%;
+}
+nav li.head button:hover {
+    background: #9ed33a;
+    color:  #fff;
+}
+nav li.control {
+    text-align: right;
+}
+nav li.control button {
+    color:  #126f73;
+    cursor: pointer;
+}
+nav li.control button:hover {
+    color:  #fff;
+    background: #126f73;
+}
+nav li.selected::after {
+    content:    "•";
+    float:  right;
+    margin-top: -1.2em;
+    color:  #e3433e;
+    z-index:    1000;
+}
+
