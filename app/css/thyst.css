@@ -1,0 +1,64 @@
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* overall layout */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+div.page {
+    display:    flex;
+    flex:   1;
+}
+main {
+    flex:   1;
+}
+nav {
+    flex:   0 0 12em;
+    order:  -1;
+}
+
+/* theming */
+header {
+    background: #bbec5e;
+    min-height: 2em;
+    border-bottom:  0.5em solid #fff;
+}
+h1 {
+    font-family:    "Lato";
+    font-weight:    100;
+    font-style: italic;
+    padding:    0 0.5em 0.1em 0.3em;
+    margin: 0;
+    background: #e0f9b0;
+    display:    inline-block;
+    border-left:    6px solid #e3433e;
+    color:  #126f73;
+}
+nav {
+    border-right:   1px solid #bbec5e;
+}
+footer {
+    min-height: 4em;
+    border-top:  0.5em solid #fff;
+}
+
+
+/* progress */
+footer div.progress {
+    background: #bbec5e;
+    display:    block;
+    width:  100%;
+    border: 0;
+    height: 5px;
+    margin-bottom:  0.5em;
+}
+footer div.progress .advance {
+    background: #e3433e;
+    width:  20%;
+    height: 5px;
+}
