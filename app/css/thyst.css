@@ -1,38 +1,29 @@
 
+/* overall layout */
 html, body {
     margin: 0;
     padding: 0;
+    height: 100vh;
+    overflow:   hidden;
 }
 
-/* overall layout */
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-}
-div.page {
-    display:    flex;
-    flex:   1;
-}
-main {
-    flex:   1;
-}
-nav {
-    flex:   0 0 12em;
-    order:  -1;
-}
 
-/* theming */
+/* top bar */
 header {
+    position:   absolute;
     background: #bbec5e;
-    min-height: 2em;
     border-bottom:  0.5em solid #fff;
+    height: 42px;
+    top:    0;
+    left:   0;
+    right:  0;
 }
 h1 {
-    font-family:    "Lato";
+    font-family:    "Lato", sans-serif;
+    font-size:  32px;
     font-weight:    100;
     font-style: italic;
-    padding:    0 0.5em 0.1em 0.3em;
+    padding:    0 16px 3px 10px;
     margin: 0;
     background: #e0f9b0;
     display:    inline-block;
@@ -44,8 +35,8 @@ h1 {
     border: none;
     background: none;
     color:  #fff;
-    font-size:  2em;
-    padding:    0 1em;
+    font-size:  32px;
+    padding:    0 32px;
     cursor: pointer;
     height: 100%;
 }
@@ -53,118 +44,17 @@ h1 {
     background: #fff;
     color:  #9ed33a;
 }
+
+/* nav */
 nav {
+    position:   absolute;
+    top:    50px;
+    bottom: 100px;
+    left:   0;
+    width:  192px;
     border-right:   1px solid #bbec5e;
-}
-footer {
-    min-height: 4em;
-    border-top:  0.5em solid #fff;
-    text-align: center;
-    padding-bottom: 0.5em;
-}
-
-
-/* play controls, progress, etc. */
-#play-progress {
-    background: #bbec5e;
-    display:    block;
-    width:  100%;
-    border: 0;
-    height: 5px;
-    margin-bottom:  0.5em;
-}
-#play-advance {
-    background: #e3433e;
-    width:  20%;
-    height: 5px;
-}
-
-#controls {
-    display:    flex;
-    flex-wrap:  wrap;
-    justify-content:    center;
-}
-#play-controls {
-    display:    flex;
-    justify-content:    center;
-}
-.play-control {
-    align-self: center;
-    border: 1px solid #9ed33a;
-    color:  #9ed33a;
-    border-radius:  50%;
-    text-align: center;
-    background: #fff;
-    margin: 0 0.2em;
-    font-size:  2em;
-    cursor: pointer;
-}
-.play-control:hover {
-    color:  #fff;
-    background: #9ed33a;
-    border-color:   #e3433e;
-}
-#play-control-rwd, #play-control-fwd {
-    height: 1.3em;
-    width:  1.3em;
-}
-#play-control-pause, #play-control-play {
-    height: 2em;
-    width:  2em;
-}
-#now {
-    display:    flex;
-}
-#now > * {
-    align-self: center;
-}
-#now-text {
-    font-family:    "Lato";
-    min-width:  15em;
-    text-align: left;
-    padding:    0 0.5em;
-}
-#now-author, #now-source {
-    font-size:  0.8em;
-}
-#play-volume {
-    display:    flex;
-    justify-content:    center;
-    flex-direction: column;
-}
-#playback {
-    display:    flex;
-    flex-wrap:  wrap;
-    width:  6em;
-}
-/* XXX needs a grey version for toggled off */
-#playback-random, #playback-loop {
-    width:  2em;
-    height: 2em;
-    font-size:  1.5em;
-    background: #fff;
-    border: none;
-    color:  #9ed33a;
-}
-#playback-time {
-    font-family:    "Lato";
-    font-size:  0.8em;
-    width:  7.5em;
-    margin: 0.2em 0 0 0;
-}
-
-
-/* playing controls */
-.playing-off #play-control-pause {
-    display:    none;
-}
-.playing-on #play-control-play {
-    display:    none;
-}
-
-/* nav stuff */
-nav {
-    font-family:    "Lato";
+    overflow:   auto;
+    font-family:    "Lato", sans-serif;
 }
 nav button {
     font-family:    inherit;
@@ -230,3 +120,162 @@ nav li.selected::after {
     z-index:    1000;
 }
 
+
+/* footer controls */
+footer {
+    position:   absolute;
+    bottom: 0;
+    left:   0;
+    right:  0;
+    height: 84px;
+    border-top:  8px solid #fff;
+    text-align: center;
+    padding-bottom: 8px;
+}
+#play-progress {
+    background: #bbec5e;
+    display:    block;
+    width:  100%;
+    border: 0;
+    height: 5px;
+    margin-bottom:  0.5em;
+}
+#play-advance {
+    background: #e3433e;
+    width:  20%;
+    height: 5px;
+}
+
+#controls {
+    display:    flex;
+    flex-wrap:  wrap;
+    justify-content:    center;
+}
+#play-controls {
+    display:    flex;
+    justify-content:    center;
+}
+.play-control {
+    align-self: center;
+    border: 1px solid #9ed33a;
+    color:  #9ed33a;
+    border-radius:  50%;
+    text-align: center;
+    background: #fff;
+    margin: 0 0.2em;
+    font-size:  2em;
+    cursor: pointer;
+}
+.play-control:hover {
+    color:  #fff;
+    background: #9ed33a;
+    border-color:   #e3433e;
+}
+#play-control-rwd, #play-control-fwd {
+    height: 1.3em;
+    width:  1.3em;
+}
+#play-control-pause, #play-control-play {
+    height: 2em;
+    width:  2em;
+}
+#now {
+    display:    flex;
+}
+#now > * {
+    align-self: center;
+}
+#now-text {
+    font-family:    "Lato", sans-serif;
+    min-width:  15em;
+    text-align: left;
+    padding:    0 0.5em;
+}
+#now-author, #now-source {
+    font-size:  0.8em;
+}
+#play-volume {
+    display:    flex;
+    justify-content:    center;
+    flex-direction: column;
+}
+#playback {
+    display:    flex;
+    flex-wrap:  wrap;
+    width:  6em;
+}
+/* XXX needs a grey version for toggled off */
+#playback-random, #playback-loop {
+    width:  2em;
+    height: 2em;
+    font-size:  1.5em;
+    background: #fff;
+    border: none;
+    color:  #9ed33a;
+}
+#playback-time {
+    font-family:    "Lato", sans-serif;
+    font-size:  0.8em;
+    width:  7.5em;
+    margin: 0.2em 0 0 0;
+}
+/* playing controls */
+.playing-off #play-control-pause {
+    display:    none;
+}
+.playing-on #play-control-play {
+    display:    none;
+}
+
+/* content */
+main {
+    position:   absolute;
+    top:    50px;
+    bottom: 100px;
+    left:   192px;
+    right:  0;
+    margin: 16px 16px 0 16px;
+    font-weight:    300;
+}
+main .filters::after {
+    clear:  both;
+    content:    ".";
+    visibility: hidden;
+}
+#filter-artist {
+    width: 50%;
+    float: left;
+}
+#filter-album {
+    width: 50%;
+    float: right;
+}
+main h2 {
+    font-size:  16px;
+    font-variant: small-caps;
+    font-weight:    300;
+    color:  #126f73;
+    margin:  0 0 0.2em 0;
+}
+main select {
+    height: 8em;
+    box-sizing: border-box;
+    border:    1px solid #9ed33a;
+    width:  95%;
+}
+main section:last-of-type select {
+    width:    100%
+}
+main table {
+    width:  100%;
+}
+main table th {
+    text-align: left;
+}
+main .listing {
+    position:   absolute;
+    width:  100%;
+    bottom: 0;
+    top:    124px;
+    overflow:   auto;
+}
